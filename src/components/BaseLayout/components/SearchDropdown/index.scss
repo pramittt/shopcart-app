@@ -1,0 +1,23 @@
+.search-results {
+	position: absolute;
+	min-width: 25rem;
+	border-radius: 5px;
+	background-color: #234243;
+	max-height: 21rem;
+	overflow:scroll;
+}
+
+.search-item {
+	display: flex;
+	border: 2px solid black;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	border-radius: 0.5rem;
+
+	img {
+		margin: 1rem;
+		height: 3rem !important;
+		width: 3rem !important;
+		border-radius: 1rem;
+	}
+}

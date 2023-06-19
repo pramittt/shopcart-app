@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  height: 3em;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  justify-content: space-between;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  margin: 0 1em;
+  color: white;
+  transition: 0.5s;
+}
+
+.navbar .nav-links a:hover {
+  background: transparent;
+  color: black;
+  transition: 0.5s;
+}
+
+.shopping-cart {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.nav-cart {
+  width: 20%;
+}
+
+.nav-search {
+  width: 50%;
+
+  input {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+  }
+}
