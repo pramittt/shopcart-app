@@ -12,12 +12,12 @@ import { actionCreators } from "./state";
 const Home = () => {
   const dispatch = useDispatch();
   const config = useSelector((state) => state.config);
-  const urls = [
-    "https://dummyjson.com/products?limit=100",
-    "https://dummyjson.com/products/categories",
-  ];
 
   useEffect(() => {
+    const urls = [
+      "https://dummyjson.com/products?limit=100",
+      "https://dummyjson.com/products/categories",
+    ];
     Promise.all(
       urls.map((url) =>
         fetch(url)
@@ -25,12 +25,12 @@ const Home = () => {
           .then((data) => data?.products || data)
       )
     ).then((data) => {
-      dispatch(actionCreators.updateProducts(data[0]))
-      dispatch(actionCreators.updateCategories(data[1]))
+      dispatch(actionCreators.updateProducts(data[0]));
+      dispatch(actionCreators.updateCategories(data[1]));
     });
-  }, []);
+  }, [dispatch]);
 
-  console.log(config)
+  console.log(config);
 
   return (
     <BrowserRouter>

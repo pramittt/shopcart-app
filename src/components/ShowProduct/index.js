@@ -1,6 +1,6 @@
 //Dependencies
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux"
 import { Icon } from "react-materialize";
 //Internals
@@ -9,7 +9,7 @@ import "./index.css";
 const ShowProduct = () => {
   const { id } = useParams()
   const { products } = useSelector((state) => state.config);
-  const currentProduct = products?.filter(item => item.id == id)[0]
+  const currentProduct = products?.filter(item => item.id === id)[0]
 
   return (
     <div className="show-product">
