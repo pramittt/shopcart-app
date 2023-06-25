@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Modal } from "react-materialize";
 
 import "./index.scss";
 
 const SearchDropdown = () => {
   const [items, setItems] = useState([]);
-  const debounce = (func, timeout = 300) => {
+  const debounce = (func, timeout = 600) => {
     let timer;
     return (...args) => {
       clearTimeout(timer);
@@ -25,7 +26,6 @@ const SearchDropdown = () => {
   };
 
   const debounceSearch = debounce(({ target }) => searchItem(target.value));
-  console.log(items);
   return (
     <>
       <input
@@ -36,11 +36,16 @@ const SearchDropdown = () => {
       <div className="search-results">
         {items.length ? (
           items?.map((item) => (
-            <div key={item.id} className="search-item">
-              <img src={item.thumbnail} />
-              <div>{item.title}</div>
-              <div>{}</div>
-            </div>
+            <a
+              href={`${item.category}/${item.id}`}
+              key={item.id}
+              className="search-item"
+            >
+              <div className="search-item-section">
+                <img src={item.thumbnail} />
+                <div>{item.title}</div>
+              </div>
+            </a>
           ))
         ) : (
           <></>

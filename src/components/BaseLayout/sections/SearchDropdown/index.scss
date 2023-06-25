@@ -1,0 +1,40 @@
+.search-results {
+	min-width: 25rem;
+	border-radius: 5px;
+	background-color: #343434;
+	max-height: 17.5rem;
+	overflow:scroll;
+	position: absolute;
+}
+
+.search-item {
+	:hover {
+		background-color: #ffffff;
+		color: #343434;
+		cursor: pointer;
+	}
+}
+
+a :hover {
+	text-decoration: none;
+}
+
+.search-item-section {
+	display: flex;
+	border: 2px solid black;
+	margin: 0.5rem;
+	border-radius: 0.3rem;
+	color: rgb(222, 222, 222);
+	border-color: aliceblue;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	text-transform: capitalize;
+
+	img {
+		margin: 1rem;
+		height: 3rem !important;
+		width: 3rem !important;
+		border-radius: 1rem;
+		border: 2px solid #343434;
+	}
+}

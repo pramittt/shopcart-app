@@ -1,15 +1,25 @@
 //Dependencies
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Icon } from "react-materialize";
 import { Link } from "react-router-dom";
+import { actionCreators } from "../../../state";
 //Internals
 
 const ClothesItems = ({ section }) => {
-  const products = useSelector((state) => state.config.products);
+  const dispatch = useDispatch();
+  const { products, cart = [] } = useSelector((state) => state.config);
   const items = products?.filter(
     (item) => !section || item.category === section
   );
+
+  const addProduct = (item) => {
+    dispatch(actionCreators.addInCart(item));
+  };
+
+  const inCart = (item) => {
+    return cart.includes(item);
+  };
 
   return (
     <div className="items">
@@ -27,13 +37,15 @@ const ClothesItems = ({ section }) => {
             </Link>
             <div className="price-add mt-3">
               <h5 id="product-price">${product.price}</h5>
-              <Icon
-                small
-                onClick={() => this.addProduct(product)}
-                id="add-icon"
-              >
-                add_shopping_cart
-              </Icon>
+              {inCart(product) ? (
+                <div>
+                  In Cart
+                </div>
+              ) : (
+                <Icon small onClick={() => addProduct(product)} id="add-icon">
+                  add_shopping_cart
+                </Icon>
+              )}
             </div>
           </div>
         );

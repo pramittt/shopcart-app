@@ -1,9 +1,9 @@
 // Dependencies
 import React from "react";
 // Externals
-import Navbar from "./components/NavBar";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Navbar from "./sections/NavBar";
+import Header from "./sections/Header";
+import Footer from "./sections/Footer";
 import "./index.css";
 
 const className = "first-header";
