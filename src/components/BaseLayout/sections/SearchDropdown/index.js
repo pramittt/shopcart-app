@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Modal } from "react-materialize";
+import { useState } from "react";
 
 import "./index.scss";
 
@@ -42,7 +41,7 @@ const SearchDropdown = () => {
               className="search-item"
             >
               <div className="search-item-section">
-                <img src={item.thumbnail} />
+                <img src={item.thumbnail} alt={item.title}/>
                 <div>{item.title}</div>
               </div>
             </a>
